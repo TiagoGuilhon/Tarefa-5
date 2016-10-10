@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js">
+    </script>
+    <body>
+       <div ng-app="MyApp">
+<div ng-controller="MyController">
+    {{myMessage}}
+    <div ng-controller="MyController2">
+        <div ng-controller="MyController3">
+            <div ng-controller="MyController4">
+                <button id="myButton" ng-click="setMessage('second')">Press</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        angular.module('MyApp', [])
+           .controller('MyController', function($scope) {
+            $scope.myMessage = "First";
+               $scope.setMessage = function(msg) {
+                $scope.myMessage = msg;
+               };
+        }).controller('MyController2', function($scope) {
+
+           }).controller('MyController3', function($scope) {
+
+           }).controller('MyController4', function($scope) {
+
+           });
+    </script>
+
+</div>
+</div>
+            </body>
+            </html>
